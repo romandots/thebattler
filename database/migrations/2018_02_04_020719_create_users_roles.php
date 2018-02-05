@@ -13,7 +13,7 @@ class CreateUsersRoles extends Migration
      */
     public function up()
     {
-	    Schema::table('users_roles', function (Blueprint $table) {
+	    Schema::create('users_roles', function (Blueprint $table) {
 		    $table->increments('id');
 		    $table->integer('user_id')->unsigned();
 		    $table->integer('role_id')->unsigned();
@@ -24,7 +24,7 @@ class CreateUsersRoles extends Migration
 		    $table->timestamps();
 	    });
     }
-
+“
     /**
      * Reverse the migrations.
      *

@@ -15,7 +15,13 @@ class CreateBattlesTable extends Migration
     {
         Schema::create('battles', function (Blueprint $table) {
             $table->increments('id');
+
+	        $table->integer('circle_id')->reference('id')->on('circles');
+
+	        $table->string('status', 10)->nullable();
+
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

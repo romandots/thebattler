@@ -15,7 +15,14 @@ class CreateCirclesTable extends Migration
     {
         Schema::create('circles', function (Blueprint $table) {
             $table->increments('id');
+
+            $table->string('title', 100)->nullable();
+            $table->integer('round')->unsigned()->nullable();
+
+	        $table->integer('category_id')->reference('id')->on('categories');
+
             $table->timestamps();
+	        $table->softDeletes();
         });
     }
 

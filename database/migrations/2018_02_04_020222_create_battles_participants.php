@@ -13,7 +13,7 @@ class CreateBattlesParticipants extends Migration
      */
     public function up()
     {
-        Schema::table('battles_participants', function (Blueprint $table) {
+    	Schema::create('battles_participants', function (Blueprint $table) {
 	        $table->increments('id');
 	        $table->integer('battle_id')->unsigned();
 	        $table->integer('participant_id')->unsigned();
