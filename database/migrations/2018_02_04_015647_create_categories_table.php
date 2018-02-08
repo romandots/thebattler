@@ -20,6 +20,7 @@ class CreateCategoriesTable extends Migration
             $table->string('description', 1000);
 
             $table->integer('event_id')->reference('id')->on('events');
+	        $table->timestamp('closed_at' )->nullable();
 
             $table->timestamps();
             $table->softDeletes();
